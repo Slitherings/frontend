@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background gradient -->
+  <rect width="100%" height="100%" fill="black" />
+
+  <!-- Stars animation -->
+  <g id="stars-group">
+    <!-- Define a star pattern as a symbol -->
+    <symbol id="star" viewBox="0 0 10 10">
+      <circle cx="5" cy="5" r="1" fill="white" />
+    </symbol>
+    <!-- Use the star symbol to create stars using animation -->
+    <use href="#star" x="100" y="200">
+      <animate attributeName="opacity" from="1" to="0.5" dur="3s" repeatCount="indefinite" />
+    </use>
+    <use href="#star" x="200" y="300">
+      <animate attributeName="opacity" from="0.5" to="1" dur="4s" repeatCount="indefinite" />
+    </use>
+    <!-- Add more stars using the <use> element and animations -->
+  </g>
+
+  <!-- Planet animation -->
+  <g id="planet-group">
+    <circle cx="500" cy="300" r="60" fill="gray" />
+    <!-- Add planet details and animations -->
+  </g>
+
+  <!-- Spaceship animation -->
+  <g id="spaceship-group">
+    <polygon points="400,550 410,580 390,580" fill="white" />
+    <!-- Add spaceship details and animations -->
+  </g>
+</svg>

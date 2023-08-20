@@ -1,0 +1,314 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+  /* Styles for the animated background */
+  .animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Move it behind other elements */
+    background: linear-gradient(135deg, #00d2ff, #3a7bd5, #a60fc1, #f10074);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animation duration and timing */
+  }
+  
+  /* CSS Animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Styles for the navbar */
+  .navbar {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9); /* Slightly transparent white color */
+    margin: 0 50px; /* Add spacing between navbar items */
+    transition: color 0.3s ease; /* Transition for hover effect */
+  }
+
+  /* Add transition for container swipe */
+
+  /* Add transition for navbar animation */
+  .animated-navbar {
+    transition: background-color 0.5s ease-in-out;
+  }
+
+
+
+/* Add the following CSS rule to your styles.css */
+.about-me-container {
+  opacity: 0;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+.fade-out {
+  opacity: 0;
+}
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 42px 10px 45px 10px;
+  }
+  
+  .logo-container img {
+    width: 50px; /* Adjust the image size as needed */
+    margin: 0 10px; /* Add spacing between logos */
+  }
+  
+
+  .content-box {
+    background-color: rgba(255, 255, 255, 0.6); /* 60% opacity white background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the box horizontally */
+  }
+  
+  
+  /* Hover effect */
+  .nav-link:hover {
+    color: rgba(255, 255, 255, 0.6); /* More transparent white color on hover */
+  }
+  
+  /* Styles for the home-container */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center aligns all text */
+    text-align: center; /* Center aligns all text */
+    padding: 40px; /* Add padding to create spacing */
+    margin: 50px auto; /* Center the container */
+    max-width: 800px; /* Set a max-width to maintain good ratio standards */
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with some transparency */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow for depth */
+    border-radius: 10px; /* Add rounded corners */
+    min-height: calc(100vh - 200px); /* Adjust the value based on your content and navbar height */
+    overflow-y: scroll; /* Enable vertical scrolling within the home container */
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .typewriter-container {
+    font-size: 24px; /* Adjust the font size for the typing animation */
+    font-family: monospace; /* Use monospace font for the command line appearance */
+    white-space: pre-wrap; /* Preserve line breaks */
+    text-align: left; /* Align the text to the left as if in a command line interface */
+    padding: 10px;
+    background-color: #333; /* Command line background color */
+    color: #fff; /* Command line text color */
+    border-radius: 5px; /* Rounded corners for the command line area */
+    min-height: 100px; /* Minimum height to allow scrolling */
+    max-height: 200px; /* Maximum height to enable scrolling */
+    overflow-y: auto; /* Enable vertical scrolling for overflow */
+  }
+  /* Styles for the header */
+  .home-header {
+    margin-bottom: 40px; /* Add margin to separate sections */
+  }
+
+  .animated-navbar {
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .animated-navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .animated-title {
+    color: white;
+    transition: color 0.5s ease-in-out;
+  }
+  
+  .animated-title.scrolled {
+    color: yellow; /* or any other color you prefer */
+  }
+   
+  html {
+    scroll-behavior: smooth;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .social-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #007bff; /* Adjust button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social-button:hover {
+    background-color: #0056b3; /* Adjust hover color */
+  }
+  
+
+  /* Add this CSS rule to your styles.css */
+.sun {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  transform-origin: center center;
+  animation: rotateSun 10s linear infinite;
+}
+
+.rays line {
+  stroke-linecap: round;
+  animation: fadeInOut 2s linear infinite alternate;
+}
+
+@keyframes rotateSun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.grass {
+  position: fixed;
+  bottom: 150px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url('./images/grass-texture.jpg') repeat-x; /* Replace with the path to your grass texture image */
+  animation: moveGrass 20s linear infinite;
+}
+
+@keyframes moveGrass {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* styles.css */
+/* ...other styles... */
+
+.animated-space-background {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Move it behind other elements */
+  animation: spaceBackgroundAnimation 30s linear infinite;
+  opacity: 10%;
+}
+
+/* CSS Animation for the space background */
+@keyframes spaceBackgroundAnimation {
+  0% {
+    background-color: black;
+  }
+  50% {
+    background-color: navy;
+  }
+  100% {
+    background-color: black;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply the animation to the SVG */
+.globe {
+  animation: spin 20s linear infinite; /* Adjust the animation duration and timing function */
+}
+
+.globe-container{
+  height: 50px;
+  width: 50px;
+  margin-top: 15px;
+}
+
+.matrix-back{
+  position: relative;
+  z-index: 3;
+  opacity: 15%;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.logo-container,
+.about-me-content,
+.logo-container,
+.button-container {
+  animation: fade-in 1s ease-in-out;
+  animation-fill-mode: forwards;
+  scroll-timeline: fade-in-scroll;
+}
+
+@scroll-timeline fade-in-scroll {
+  start: 0% 80%;
+  end: 100% 20%;
+}
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px);
+}

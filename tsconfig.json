@@ -6,6 +6,10 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": "src",
+    "paths": {
+      "*": ["src/*", "src/react-typewriter-effect.d.ts"]
+    },
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
