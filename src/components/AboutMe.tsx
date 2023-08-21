@@ -88,15 +88,15 @@ const AboutMe: React.FC = () => {
       </div>
 
       <div className="logo-container">
-        <img src={ReactLogo} alt="React Logo" className="fade-in-element" />
-        <img src={TypeScriptLogo} alt="TypeScript Logo" className="fade-in-element"/>
-        <img src={PythonLogo} alt="Python Logo" className="fade-in-element"/>
-        <img src={JavaScriptLogo} alt="JavaScript Logo" className="fade-in-element"/>
-        <img src={SolidityLogo} alt="Solidity Logo" className="fade-in-element"/>
-        <img src={HTMLLogo} alt="HTML Logo" className="fade-in-element"/>
-        <img src={CSSLogo} alt="CSS Logo" className="fade-in-element"/>
-        <img src={TailwindLogo} alt="Tailwind CSS Logo" className="fade-in-element"/>
-        <img src={OtherLogo} alt="Other Logo" className="fade-in-element"/>
+        <img src={ReactLogo} alt="React Logo" />
+        <img src={TypeScriptLogo} alt="TypeScript Logo" />
+        <img src={PythonLogo} alt="Python Logo"  />
+        <img src={JavaScriptLogo} alt="JavaScript Logo" />
+        <img src={SolidityLogo} alt="Solidity Logo" />
+        <img src={HTMLLogo} alt="HTML Logo" />
+        <img src={CSSLogo} alt="CSS Logo" />
+        <img src={TailwindLogo} alt="Tailwind CSS Logo" />
+        <img src={OtherLogo} alt="Other Logo" />
       </div>
       <div className="button-container">
         <a
