@@ -8,11 +8,9 @@ import HTMLLogo from '../images/html-logo.png';
 import CSSLogo from '../images/css-logo.png';
 import TailwindLogo from '../images/tailwind-logo.png';
 import OtherLogo from '../images/other-logo.png';
-import { useLocation } from 'react-router-dom';
 
 const AboutMe: React.FC = () => {
   
-  const location = useLocation();
   const [isRouteChanging, setIsRouteChanging] = useState(false);
   const [isTyped, setIsTyped] = useState(false);
   const [typedText, setTypedText] = useState('');
@@ -67,7 +65,7 @@ const AboutMe: React.FC = () => {
       clearInterval(typingInterval);
       observer.disconnect();
     };
-  }, [location]);
+  }, [aboutMeText]);
 
   return (
     <><div className={`about-me-container ${isRouteChanging ? 'fade-out' : 'fade-in'}`}>
