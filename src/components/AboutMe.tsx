@@ -67,7 +67,7 @@ const AboutMe: React.FC = () => {
       clearInterval(typingInterval);
       observer.disconnect();
     };
-  }, [aboutMeText, location]);
+  }, [location]);
 
   return (
     <><div className={`about-me-container ${isRouteChanging ? 'fade-out' : 'fade-in'}`}>
