@@ -95,7 +95,7 @@ const App: React.FC = () => {
         </Routes>
       </div>
       <div className="animated-background">
-        <img className="matrix-back" src={matrix} />
+        <img className="matrix-back" src={matrix} alt="matrix background gif"/>
       </div>
 
     </Router>

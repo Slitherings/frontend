@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect , useState } from 'react';
 import ReactLogo from '../images/react-logo.png'; // Replace with the actual path to your image files
 import TypeScriptLogo from '../images/typescript-logo.png';
 import PythonLogo from '../images/python-logo.png';
@@ -11,6 +11,7 @@ import OtherLogo from '../images/other-logo.png';
 import { useLocation } from 'react-router-dom';
 
 const AboutMe: React.FC = () => {
+  
   const location = useLocation();
   const [isRouteChanging, setIsRouteChanging] = useState(false);
   const [isTyped, setIsTyped] = useState(false);
@@ -66,7 +67,7 @@ const AboutMe: React.FC = () => {
       clearInterval(typingInterval);
       observer.disconnect();
     };
-  }, [location]);
+  }, [aboutMeText, location]);
 
   return (
     <><div className={`about-me-container ${isRouteChanging ? 'fade-out' : 'fade-in'}`}>
