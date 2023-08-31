@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Projects.css';
-import FlappyBirdDemo from './jects/FlappyBirdDemo';
 import swift from '../images/-xbCmUfc_400x400.png';
 import hayha from '../images/xCKR64Mo_400x400.jpg';
 
