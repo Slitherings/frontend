@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Routes,
-  useLocation,
 } from "react-router-dom";
 import Home from "./components/Home";
 import AboutMe from "./components/AboutMe";
