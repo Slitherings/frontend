@@ -75,11 +75,11 @@ const AboutMe: React.FC = () => {
         <div className="about-me-content">
           {isTyped ? (
             <React.Fragment>
-              <p>{aboutMeText[0]}</p>
-              <p>{aboutMeText[1]}</p>
-              <p>{aboutMeText[2]}</p>
-              <p>{aboutMeText[3]}</p>
-              <p>{aboutMeText[4]}</p>
+                <p><li>{aboutMeText[0]}</li></p>
+                <p><li>{aboutMeText[1]}</li></p>
+                <p><li>{aboutMeText[2]}</li></p>
+                <p><li>{aboutMeText[3]}</li></p>
+                <p><li>{aboutMeText[4]}</li></p>
             </React.Fragment>
           ) : (
             <p>{typedText}</p>
@@ -100,7 +100,7 @@ const AboutMe: React.FC = () => {
       </div>
       <div className="button-container">
         <a
-          href="https://github.com/your-username"
+          href="https://github.com/Slitherings"
           target="_blank"
           rel="noopener noreferrer"
           className="social-button"
@@ -108,7 +108,7 @@ const AboutMe: React.FC = () => {
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/your-profile"
+          href="https://www.linkedin.com/in/jaylen-cooper-241b22138/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-button"
@@ -116,7 +116,7 @@ const AboutMe: React.FC = () => {
           LinkedIn
         </a>
         <a
-          href="https://stackoverflow.com/users/your-userid"
+          href="https://stackoverflow.com/users/17813139"
           target="_blank"
           rel="noopener noreferrer"
           className="social-button"

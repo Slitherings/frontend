@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../styles.css';
 import { useLocation } from 'react-router-dom';
+import GitHubStats from './jects/Githubstats'
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -53,10 +54,10 @@ const Home: React.FC = () => {
           Fullstack Blockchain Developer
         </h1>
         <p className="text-lg">{typedText}</p>
-        <h1 className={`text-4xl font-bold mb-2 ${isScrolled ? 'animated-title' : ''}`}>
-          4 Years + Experience
-        </h1>
       </header>
+      <div>
+        <GitHubStats />
+      </div>
     </div>
   );
 };

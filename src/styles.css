@@ -57,6 +57,7 @@ body {
 
 /* Add the following CSS rule to your styles.css */
 .about-me-container {
+  font-family: 'Courier New', monospace; /* Set the desired command-line font */
   opacity: 0;
   transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -84,11 +85,14 @@ body {
   
 
   .content-box {
-    background-color: rgba(255, 255, 255, 0.6); /* 60% opacity white background */
+    background-color: rgba(255, 255, 255, 0.1); /* 60% opacity white background */
+    color: white;
     padding: 20px;
     border-radius: 10px;
     width: 60%; /* Adjust the width as needed */
     margin: 0 auto; /* Center the box horizontally */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', monospace; /* Set the desired command-line font */
   }
   
   
@@ -99,17 +103,19 @@ body {
   
   /* Styles for the home-container */
   .home-container {
+    font-family: 'Courier New', monospace; /* Set the desired command-line font */
     display: flex;
     flex-direction: column;
     align-items: center; /* Center aligns all text */
     text-align: center; /* Center aligns all text */
     padding: 40px; /* Add padding to create spacing */
     margin: 50px auto; /* Center the container */
+    color: white;
     max-width: 800px; /* Set a max-width to maintain good ratio standards */
-    background-color: rgba(255, 255, 255, 0.8); /* Set background color with some transparency */
+    background-color: rgba(255, 255, 255, 0.1); /* Set background color with some transparency */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box-shadow for depth */
     border-radius: 10px; /* Add rounded corners */
-    min-height: calc(100vh - 200px); /* Adjust the value based on your content and navbar height */
+    min-height: calc(100vh - 463px);
     overflow-y: scroll; /* Enable vertical scrolling within the home container */
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -208,25 +214,6 @@ body {
   }
   50% {
     opacity: 1;
-  }
-}
-
-.grass {
-  position: fixed;
-  bottom: 150px;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  background: url('./images/grass-texture.jpg') repeat-x; /* Replace with the path to your grass texture image */
-  animation: moveGrass 20s linear infinite;
-}
-
-@keyframes moveGrass {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
   }
 }
 

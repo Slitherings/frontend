@@ -58,13 +58,13 @@ const App: React.FC = () => {
               y2="50"
               stroke="#FFD700"
               strokeWidth="4"
-            />
+            />  
           </g>
         </svg>
       </div>
           <ul
             className="text-4xl flex justify-center list-none space-x-8"
-            style={{ listStyle: "none", display: "-webkit-inline-box" }}
+            style={{ listStyle: "none", display: "-webkit-inline-box", fontFamily: 'Courier New' }}
           >
             <li className="inline-block">
               <Link to="/" className="nav-link">

@@ -4,6 +4,7 @@
     align-items: center;
     padding: 100px;
     font-family: 'Courier New', monospace; /* Set the desired command-line font */
+    text-align-last: center;
   }
   
   .projects-section {
@@ -38,37 +39,121 @@
   }
   /* ... previous styles ... */
 
+/* Add these styles for the modal */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  animation: modalOpen 0.5s ease-in-out; /* Apply the animation to the modal */
+  position: relative;
+  width: 700px; /* Set width to 700px */
+  height: 700px; /* Set height to 700px */
+  max-height: 80vh; /* Limit the height of the modal */
+  overflow-y: auto; /* Add scroll if content exceeds height */
+  overflow-x: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Add keyframes for the modal animation */
+@keyframes modalOpen {
+  from {
+    transform: scale(0);
+    opacity: 0;
   }
-  
-  .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    max-width: 80%;
-    max-height: 80%;
-    overflow: auto;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* ... rest of the styles ... */
-  
+}
+
+/* Add styles for the fade-in effect */
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Rest of your existing styles */
+
+.gallery {
+  align-items: center;
+  justify-content: center;
+  display: inline-grid;
+  height: 100%;
+}
+
+/* Style for arrow buttons */
+.arrow-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+
+.gallery img {
+  opacity: 0; /* Start with 0 opacity */
+  transform: scale(0.5); /* Start with smaller size */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Apply transitions */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Animation when images are visible */
+.gallery img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery img.fading-out {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* ... (your existing styles) */
+
+/* Style for the gallery images container */
+.ImageContainer {
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+  padding-left: 150px;
+  display: flex; /* Display children in a row */
+
+}
+
+/* ... (rest of your existing styles) */
