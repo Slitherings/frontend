@@ -5,23 +5,44 @@ const ContactMe: React.FC = () => {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [message, setMessage] = useState('');
+  const [modalMessage, setModalMessage] = useState('');
+  const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you can perform client-side validation of the input fields
-    // and send the data to your backend for further processing
-    // Sending emails should be handled on the server-side.
-    console.log('Email:', email);
-    console.log('Phone Number:', phoneNumber);
-    console.log('Message:', message);
-    // Clear the form fields after submission
-    setEmail('');
-    setPhoneNumber('');
-    setMessage('');
+
+    try {
+      const response = await fetch(`http://localhost:5000/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, phoneNumber, message })
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        setModalMessage(data); // Set the message from the server
+        setShowModal(true); // Show the modal
+        // Clear the form fields after successful submission
+        setEmail('');
+        setPhoneNumber('');
+        setMessage('');
+      } else {
+        const errorMessage = await response.text(); // Get the error message from the response
+        setModalMessage(errorMessage); // Set the error message
+        setShowModal(true); // Show the error modal
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
     <div className="contact-container">
+      <h2 style={{color:'greenyellow', justifySelf:'center'}}>Under Construction</h2>
+      <br></br>
+      <h2 style={{color:'white', justifySelf:'center'}}>Email @ JaylenCooper123@yahoo.com</h2>
       <div className="contact-box">
         <h2 style={{color:'white'}}>Contact Me Page</h2>
         <form onSubmit={handleSubmit}>
@@ -54,6 +75,14 @@ const ContactMe: React.FC = () => {
               required
             />
           </div>
+          {showModal && (
+            <div className="modal">
+              <div className="modal-content">
+                <p>{modalMessage}</p>
+                <button onClick={() => setShowModal(false)}>Close</button>
+              </div>
+            </div>
+          )}
           <button type="submit">Submit</button>
         </form>
       </div>
