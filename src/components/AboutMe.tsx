@@ -1,4 +1,4 @@
-import React, { useEffect , useState } from 'react';
+import React, { useEffect , useMemo, useState } from 'react';
 import ReactLogo from '../images/react-logo.png'; // Replace with the actual path to your image files
 import TypeScriptLogo from '../images/typescript-logo.png';
 import PythonLogo from '../images/python-logo.png';
@@ -15,14 +15,15 @@ const AboutMe: React.FC = () => {
   const [isTyped, setIsTyped] = useState(false);
   const [typedText, setTypedText] = useState('');
 
-  const aboutMeText = [
-    " I'm a 24-year-old developer based in Plano, Texas.",
-    " I hold an Associate's degree of Arts in General Studies and am currently pursuing a Bachelor's degree of Science in Business Computer Information Systems.",
-    " With 4 years of experience in Fullstack Development, I've had the opportunity to work on a variety of projects and contribute to multiple open source GitHub repositories.",
-    " Web Applications like Github, Figma, AWS & Other Cloud Computing / Collaborative Work Applications are natural areas of excel.",
-    " I have a side hobby of Audio Engineering in Ableton Live 9 & FL Studio 11, Along with Video Editing in Adobe After Effects & Sony Vegas Pro."
-  ];
-
+  const aboutMeText = useMemo(() => {
+    const textArray = [];
+    textArray.push(" I'm a 24-year-old developer based in Plano, Texas.");
+    textArray.push(" I hold an Associate's degree of Arts in General Studies and am currently pursuing a Bachelor's degree of Science in Business Computer Information Systems.");
+    textArray.push(" With 4 years of experience in Fullstack Development, I've had the opportunity to work on a variety of projects and contribute to multiple open source GitHub repositories.");
+    textArray.push(" Web Applications like Github, Figma, AWS & Other Cloud Computing / Collaborative Work Applications are natural areas of excel.");
+    textArray.push(" I have a side hobby of Audio Engineering in Ableton Live 9 & FL Studio 11, Along with Video Editing in Adobe After Effects & Sony Vegas Pro.");
+    return textArray;
+  }, []);
   const typingSpeed = 50; // Adjust typing speed here (milliseconds per character)
 
   useEffect(() => {
