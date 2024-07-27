@@ -56,7 +56,7 @@ const Home: React.FC = () => {
         <p className="text-lg">{typedText}</p>
       </header>
       <div>
-        <GitHubStats />
+        <GitHubStats/>
       </div>
     </div>
   );

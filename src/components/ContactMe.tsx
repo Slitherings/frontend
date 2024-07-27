@@ -8,18 +8,16 @@ const ContactMe: React.FC = () => {
   const [modalMessage, setModalMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
-
     try {
-      const response = await fetch(`http://localhost:5000/send-email`, {
+      const response = await fetch('http://localhost:5000/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, phoneNumber, message })
       });
-
       if (response.ok) {
         const data = await response.text();
         setModalMessage(data); // Set the message from the server
